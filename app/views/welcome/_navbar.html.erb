@@ -24,12 +24,15 @@
     <ul class="nav navbar-nav">
       <li><%= link_to "FAQ", welcome_faq_path %></li>
     </ul>
+    <% if current_user %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "<span class=\"glyphicon glyphicon-user\"></span>Sign Out".html_safe, destroy_user_session_path, method: :delete %></li>
+      </ul>
+    <% else %>
     <ul class="nav navbar-nav navbar-right">
-       <li><%= link_to "<span class=\"glyphicon glyphicon-user\"></span>Sign Up".html_safe, new_user_registration_path %></li>
+      <li><%= link_to "<span class=\"glyphicon glyphicon-user\"></span> Login/Sign Up".html_safe, user_session_path %></li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "<span class=\"glyphicon glyphicon-user\"></span> Login".html_safe, user_session_path %></li>
-    </ul>
+    <% end %>
     
     </ul>
   </div>

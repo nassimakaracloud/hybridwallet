@@ -53,6 +53,8 @@ group :development, :test do
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
   # Guard::RSpec automatically run your specs (much like autotest).
   gem 'guard-rspec', '~> 4.7', '>= 4.7.3', require: false
+  
+  gem 'pry-rails'
 end
 
 group :development do

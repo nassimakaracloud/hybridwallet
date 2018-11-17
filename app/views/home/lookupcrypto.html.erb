@@ -1,0 +1,8 @@
+<h3>Look for Cryptocurrency value</h3>
+
+<br/>
+
+<%= form_tag home_lookupcrypto_path, :method => 'POST' do %>
+  <%= text_field_tag 'id', nil, placeholder: 'Enter Cryptocurrency symbol', size: 50 %>
+  <%= submit_tag 'Lookup Cryptocurrency Stock Quote' %>
+<% end %>

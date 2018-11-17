@@ -8,6 +8,10 @@ class WelcomeController < ApplicationController
     
     def faq
     end
+    
+    def index
+        puts current_user
+    end    
 
 
 end
