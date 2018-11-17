@@ -3,5 +3,31 @@
 <li><%= link_to "Lookup for Cryptocurrencies", home_lookupcrypto_path %></li>
 <li><%= link_to "Lookup for Currencies", home_lookupcurrency_path %></li>
 
-
-<%= @crypto %>
+<table class="table">
+    <thead>
+        <th>Symbol Cryptocurrency</th>
+        <th>Today Open</th>
+        <th>Today High</th>
+        <th>Today Low</th>
+        <th>24h average</th>
+        <th>Global vol</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Bitcoin</td>
+            <td><%= @bitcoin['open']['day'] %></td>
+            <td><%= @bitcoin['high'] %></td>
+            <td><%= @bitcoin['low'] %></td>
+            <td><%= @bitcoin['averages']['day'] %></td>
+            <td><%= @bitcoin['volume'] %></td>
+        </tr>
+        <tr>
+            <td>Ethereum</td>
+            <td><%= @ethereum['open']['day'] %></td>
+            <td><%= @ethereum['high'] %></td>
+            <td><%= @ethereum['low'] %></td>
+            <td><%= @ethereum['averages']['day'] %></td>
+            <td><%= @ethereum['volume'] %></td>
+        </tr>
+    </tbody>
+</table>
