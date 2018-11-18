@@ -1,7 +1,11 @@
-<h2>Welcome</h2>
+<h2>Manage your Cryptocurrency</h2>
+<br/>
 
-<li><%= link_to "Lookup for Cryptocurrencies", home_lookupcrypto_path %></li>
-<li><%= link_to "Lookup for Currencies", home_lookupcurrency_path %></li>
+  <div class="container">
+  <div class="row justify-content-md-center">
+      
+ 
+</div>
 
 <table class="table">
     <thead>
@@ -29,5 +33,27 @@
             <td><%= @ethereum['averages']['day'] %></td>
             <td><%= @ethereum['volume'] %></td>
         </tr>
+        <tr>
+            <td>Litecoin</td>
+            <td><%= @litecoin['open']['day'] %></td>
+            <td><%= @litecoin['high'] %></td>
+            <td><%= @litecoin['low'] %></td>
+            <td><%= @litecoin['averages']['day'] %></td>
+            <td><%= @litecoin['volume'] %></td>
+        </tr>
+        
+        <tr>
+            <td>ZCASH</td>
+            <td><%= @ZCash['open']['day'] %></td>
+            <td><%= @ZCash['high'] %></td>
+            <td><%= @ZCash['low'] %></td>
+            <td><%= @ZCash['averages']['day'] %></td>
+            <td><%= @ZCash['volume'] %></td>
+        </tr>
+        
     </tbody>
 </table>
+
+<br/>
+
+<h2>Manage your Currencies</h2>
