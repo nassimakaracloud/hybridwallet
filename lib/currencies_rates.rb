@@ -1,8 +1,8 @@
-module BitcoinAverage
+module Currencies
   class HTTP
     include HTTParty
     
-    base_uri "https://apiv2.bitcoinaverage.com"
+    base_uri "http://data.fixer.io/api/latest?access_key=293944c19667c2bf2650287d9c75e1f8"
     
     def initialize
     end
@@ -16,7 +16,5 @@ module BitcoinAverage
         path = "/indices/#{symbol_set}/ticker/#{symbol}"
         make_call path
     end
-    
-   
   end
 end

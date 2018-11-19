@@ -2,7 +2,13 @@
 
 <br/>
 
-<%= form_tag home_lookupcrypto_path, :method => 'POST' do %>
-  <%= text_field_tag 'id', nil, placeholder: 'Enter Cryptocurrency symbol', size: 50 %>
-  <%= submit_tag 'Lookup Cryptocurrency Stock Quote' %>
+<%= form_tag home_lookupcurrency_path, :action => "/home/lookupcrypto", :method => 'POST' do%>
+  <%= text_field_tag 'symbol', nil, placeholder: 'Enter Cryptocurrency symbol', size: 40 %>
+  <%= submit_tag 'Lookup Cryptocurrency Stock Quote', class: 'btn btn-dark' %>
 <% end %>
+
+<br/>
+
+<div class="btn-group">
+    <%= link_to 'Back to HomePage', home_home_path, :class => "btn btn-dark" %>
+</div>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Symbol:</strong>
+  <%= @cryptotable.symbol %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cryptotable.user_id %>
+</p>
+
+<p>
+  <strong>Unit price:</strong>
+  <%= @cryptotable.unit_price %>
+</p>
+
+<p>
+  <strong>Total amount:</strong>
+  <%= @cryptotable.total_amount %>
+</p>
+
+<%= link_to 'Edit', edit_cryptotable_path(@cryptotable), class: 'btn btn-dark mr-5' %> 
+
+<%= link_to 'Back to Account', cryptotables_path, class: 'btn btn-dark mr-5' %>
+
+<%= link_to 'Look for New Cryptocurrency', new_cryptotable_path, class: 'btn btn-dark mr-5'%><br/><br/>
+
+<%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-dark' %>

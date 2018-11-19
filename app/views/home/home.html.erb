@@ -1,14 +1,22 @@
 <h2>Manage your Cryptocurrency</h2>
 <br/>
 
-  <div class="container">
-  <div class="row justify-content-md-center">
+<div class="container">
+      <div class="btn-group mr-5 float-right">
+            <%= link_to 'Calculate Profit/Loss', cryptotables_path, :class => "btn btn-primary" %>
+      </div>
+      <div class="btn-group mr-5 float-right">
+            <%= link_to 'Lookup Cryptocurrency', home_lookupcrypto_path, :class => "btn btn-primary" %>
+      </div>
       
- 
+      
 </div>
+  
 
-<table class="table">
-    <thead>
+ <br/>
+
+<table class="table table-bordered modal-dialog modal-lg">
+    <thead class="thead-dark">
         <th>Symbol Cryptocurrency</th>
         <th>Today Open</th>
         <th>Today High</th>

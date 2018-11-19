@@ -1,0 +1,38 @@
+<%= form_with(model: cryptotable, local: true) do |form| %>
+  <% if cryptotable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cryptotable.errors.count, "error") %> prohibited this cryptotable from being saved:</h2>
+
+      <ul>
+      <% cryptotable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :symbol %>
+    <%= form.text_field :symbol, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+   
+    <%= form.number_field :user_id, value: current_user.id, class: 'form-control', type: "hidden" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unit_price %>
+    <%= form.text_field :unit_price, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_amount %>
+    <%= form.text_field :total_amount, class: 'form-control' %>
+  </div>
+  <br/>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
