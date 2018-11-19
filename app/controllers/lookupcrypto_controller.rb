@@ -1,15 +1,16 @@
 require 'bitcoin_average'
-class LookupcrytoController < ApplicationController
-
- def lookupcrypto
-  return render { :message => "testing" }, :status => 200
+class LookupcryptoController < ApplicationController
   before_action :authenticate_user!
   before_action :user_signed_in?
-    api_client = BitcoinAverage::HTTP.new
-    @symbol= JSON.parse api_client.ticker_data('global', 'symbol_set','symbol').body
-    @symbol = params [:symbol]
+
+ def lookupcrypto
+   api_client = BitcoinAverage::HTTP.new
+   @symbol= JSON.parse api_client.ticker_data('global', params[:symbol]).body
+   
+   puts "symbol: #{@symbol}"
+   render "home/lookupcrypto"
     
-    
-  end
+ end
+ 
   
 end

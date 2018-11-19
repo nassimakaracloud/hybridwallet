@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'home/cryptotables'
   get 'home/cryptotables/new'
   get 'home/lookupcrypto'
-  post "/home/lookupcrypto" => 'home/lookupcrypto', :as => 'home_lookupcurrency'
+  post "home/lookupcrypto", to: "lookupcrypto#lookupcrypto"
   get 'home/home'
   get 'welcome/faq'
   get 'welcome/about'
