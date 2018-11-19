@@ -1,8 +1,9 @@
-module Currencies
+module CurrenciesRate
+
   class HTTP
     include HTTParty
     
-    base_uri "http://data.fixer.io/api/latest?access_key=293944c19667c2bf2650287d9c75e1f8"
+    base_uri "http://data.fixer.io/api/"
     
     def initialize
     end
@@ -12,9 +13,11 @@ module Currencies
       self.class.send(method, path)
     end
     
-    def ticker_data(symbol_set, symbol)
-        path = "/indices/#{symbol_set}/ticker/#{symbol}"
+    def ticker_data(base, rates)
+        path = "http://data.fixer.io/api/latest?access_key=293944c19667c2bf2650287d9c75e1f8"
         make_call path
     end
+    
+   
   end
 end

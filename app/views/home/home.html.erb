@@ -65,3 +65,44 @@
 <br/>
 
 <h2>Manage your Currencies</h2>
+
+<div class="container">
+      <div class="btn-group mr-5 float-right">
+            <%= link_to 'Calculate Profit/Loss', cryptotables_path, :class => "btn btn-primary" %>
+      </div>
+      <div class="btn-group mr-5 float-right">
+            <%= link_to 'Lookup Currency', home_lookupcurrency_path, :class => "btn btn-primary" %>
+      </div>
+      
+      
+</div>
+
+
+<table class="table table-bordered modal-dialog modal-lg">
+    <thead class="thead-dark">
+        <th>Symbol Currencies</th>
+        <th>Rates</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>USD</td>
+            <td><%= @USD['rates'] ['USD'] %> </td>
+            
+            
+         </tr>
+        <tr>
+            <td>GBP</td>
+            <td><%= @GBP['rates'] ['GBP'] %> </td>
+        </tr>
+        <tr>
+            <td>AUD</td>
+            <td><%= @AUD['rates'] ['AUD'] %> </td>
+            
+        </tr>
+        
+        <tr>
+            <td>JPY</td>
+            <td><%= @JPY['rates'] ['JPY'] %> </td>
+            
+        </tr>
+    </tbody>
