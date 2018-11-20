@@ -10,9 +10,10 @@ class LookupcurrencyController < ApplicationController
     @uri= URI(@url)
     @response= Net::HTTP.get(@uri)
     @lookup_currency= JSON.parse(@response)
-    @base = params[:base]
+    @symbol = params[:symbol]
     
-    
+    puts "symbol: #{@symbol}"
+    render "home/lookupcurrency"
     end
     
 end

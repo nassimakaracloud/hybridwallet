@@ -9,13 +9,12 @@
 
 <br/>
 
-<div class="base">
-<%= @base %>
+<div class="symbol">
     
-<% if @base %>
-    <% for x in @lookup_currency %>
-        <% if @base == x["base"] %>
-        <%= x["base"] %>: <%= x["rates"] %>
+<% if @symbol %>
+    <% @lookup_currency['rates'].each do |rate, value| %>
+        <% if @symbol == rate %>
+          <%= rate %>: <%= value %>
         <% end %>
     <% end %>
  <% end %>
