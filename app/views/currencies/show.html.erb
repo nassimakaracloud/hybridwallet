@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Symbol:</strong>
+  <%= @currency.symbol %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @currency.user_id %>
+</p>
+
+<p>
+  <strong>Unit price:</strong>
+  <%= @currency.unit_price %>
+</p>
+
+
+
+
+
+<%= link_to 'Edit', edit_currency_path(@currency), class: 'btn btn-dark mr-5' %>
+
+<%= link_to 'Delete', currency_path(@currency), method: :delete, data: { confirm: 'Are you sure?' }, class: 'mr-5' %>
+
+<%= link_to 'Back to Account', currencies_path, class: 'btn btn-dark mr-5' %><br/><br/>
+
+<%= link_to 'Look for New Currency', new_currency_path, class: 'btn btn-dark mr-5'%>
+
+<%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-dark' %>

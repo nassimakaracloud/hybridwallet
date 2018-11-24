@@ -1,9 +1,9 @@
-require 'bitcoin_average'
 require 'currencies_rate'
 
 class HomeController < ApplicationController
-before_action :authenticate_user!
-before_action :user_signed_in?
+  before_action:authenticate_user!
+  before_action:user_signed_in?
+  
 
   def home
     api_client = BitcoinAverage::HTTP.new
@@ -20,7 +20,9 @@ before_action :user_signed_in?
   end
   
   def lookupcrypto
-  end 
+  end
+  
+  
   
   def lookupcurrency
   end 

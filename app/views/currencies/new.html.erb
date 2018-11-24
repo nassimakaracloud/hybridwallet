@@ -1,0 +1,7 @@
+<h1>New Currency</h1>
+
+<%= render 'form', currency: @currency, class: 'btn btn-dark' %>
+
+<%= link_to 'Delete', currencies_path(@currency), method: :delete, data: { confirm: 'Are you sure?' }, class: 'mr-5' %>
+
+<%= link_to 'Back', currencies_path, class: 'btn btn-dark' %>

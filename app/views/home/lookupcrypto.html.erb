@@ -9,12 +9,19 @@
 
 <br/>
 
-<%= @symbol %>
+        <div class="symbol">
+            <% if @symbol %>
+                 High: <%= @symbol['high'] %>
+            <% end %>
+  
+        </div>
 
-<div class="symbol">
-   
-   Low: <%= @symbol['low'] %>
     
+
+
+
+<br/>
+ 
 </div>
 
 
@@ -27,5 +34,3 @@
     </div>
     
 </div>
-
-

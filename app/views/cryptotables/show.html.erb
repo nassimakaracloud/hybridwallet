@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Symbol:</strong>
   <%= @cryptotable.symbol %>
@@ -8,6 +7,11 @@
 <p>
   <strong>User:</strong>
   <%= @cryptotable.user_id %>
+</p>
+
+<p>
+  <strong>Total quantity:</strong>
+  <%= @cryptotable.total_quantity %>
 </p>
 
 <p>
@@ -25,5 +29,7 @@
 <%= link_to 'Back to Account', cryptotables_path, class: 'btn btn-dark mr-5' %>
 
 <%= link_to 'Look for New Cryptocurrency', new_cryptotable_path, class: 'btn btn-dark mr-5'%><br/><br/>
+
+<td><%= link_to 'Destroy', cryptotable_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'mr-5' %></td>
 
 <%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-dark' %>

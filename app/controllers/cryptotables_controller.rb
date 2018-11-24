@@ -1,12 +1,15 @@
 class CryptotablesController < ApplicationController
   before_action :set_cryptotable, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
-  before_action :user_signed_in?
+  before_action:authenticate_user!
+  before_action:user_signed_in?
+  
+  
 
   # GET /cryptotables
   # GET /cryptotables.json
   def index
     @cryptotables = Cryptotable.all
+    retrieve_data
   end
 
   # GET /cryptotables/1
@@ -71,8 +74,19 @@ class CryptotablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cryptotable_params
-      params.require(:cryptotable).permit(:symbol, :user_id, :unit_price, :total_amount)
+      params.require(:cryptotable).permit(:symbol, :user_id, :total_quantity,:unit_price, :total_amount)
     end
     
+    def retrieve_data
+      api_client = BitcoinAverage::HTTP.new
+      @lookup_crypto = {}
+      @cryptotables.each do |item|
+        response = api_client.ticker_data('global', item.symbol).body
+
+        unless response.scan('not supported').length > 0
+          @lookup_crypto[item.symbol] = JSON.parse response
+        end  
+      end
+    end
     
 end

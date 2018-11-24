@@ -5,6 +5,10 @@ ruby '2.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
+
+# Use PostgresSQL
+gem "pg", '>= 0.18', '< 2.0'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -43,6 +47,12 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
 gem 'httparty'
+
+gem 'csv_export'
+
+gem 'bitcoinaverage-ruby', git: 'https://github.com/nassimakaracloud/bitcoinaverage-ruby'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

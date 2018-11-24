@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
     
+  resources :currencies
   resources :cryptotables
   devise_for :users
+  
+  
+  get 'export_to_csv' => 'currencies#export_csv', as: 'export_csv'
+  get 'home/currencies/new'
+  get 'home/currencies'
   get 'home/cryptotables'
   get 'home/cryptotables/new'
   get 'home/lookupcurrency'

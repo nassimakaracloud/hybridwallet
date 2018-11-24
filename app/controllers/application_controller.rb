@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
-    
-    def after_sign_in_path_for(resource)  
-     home_home_path #edited
-    end
+     protect_from_forgery with: :exception
+     
+     def after_sign_in_path_for(resource)  
+       home_home_path #edited
+     end
 end

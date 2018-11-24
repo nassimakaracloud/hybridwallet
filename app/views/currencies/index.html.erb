@@ -1,0 +1,53 @@
+
+
+<h1>Currencies</h1>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      
+      <th>Symbol</th>
+      <th>Quantity</th>
+      <th>Unit price</th>
+      <th>Total amount</th>
+      <th>Current Day Price</th>
+      <th>Total Amount Day Price</th>
+      <th>Profit/Loss</th>
+      <th>Show</th>
+      <th>Edit</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @currencies.each do |currency| %>
+    <% if currency.user_id == current_user.id %>
+        <% if @lookup_currency['rates'][currency.symbol] %>
+          <tr>
+            <% current_day_price = @lookup_currency['rates'][currency.symbol] %>
+        
+             <td><%= currency.symbol %></td>
+              <td><%= currency.quantity %></td>
+             <td><%= currency.unit_price %></td>
+        <td><%= currency.total_amount %></td>
+        <td><%= current_day_price %></td>
+        <td><%= currency.quantity * current_day_price %></td>
+        <td><%= (currency.quantity * current_day_price) - currency.total_amount %></td>
+        <td><%= link_to 'Show', currency, class: 'mr-5' %></td>
+        <td><%= link_to 'Edit', edit_currency_path(currency), class: 'mr-5' %></td>
+        
+      </tr>
+      <% end %>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+
+<%= link_to 'New Currency', new_currency_path, class: 'btn btn-dark mr-5' %>
+
+<%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-dark mr-5' %>
+
+<%= link_to 'Export to CSV', export_csv_path, class: 'btn btn-dark mr-5' %>
+
