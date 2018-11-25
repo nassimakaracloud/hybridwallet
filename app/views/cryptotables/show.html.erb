@@ -1,35 +1,56 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Symbol:</strong>
-  <%= @cryptotable.symbol %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @cryptotable.user_id %>
-</p>
+<h2>New Cryptocurrency</h2>
 
-<p>
-  <strong>Total quantity:</strong>
-  <%= @cryptotable.total_quantity %>
-</p>
+  
+  <div class="container">
+    <%= link_to 'Edit', edit_cryptotable_path(@cryptotable), class: ' btn btn-dark mr-5 float-right' %>
+  
+    <%= link_to 'Delete', cryptotable_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-dark mr-5 float-right' %>
+   
+    <%= link_to 'Look for New Cryptocurrency', new_cryptotable_path, class: 'btn btn-dark float-right mr-5'%><br/>
+    
+     
+  </div>
+  
+<div class="container">
+  <table class="table table-bordered modal-dialog modal-lg">
+    <thead class="thead-dark">
+      <tr>
+        <th>Symbol</th>
+        <th>Total quantity</th>
+        <th>Unit price</th>
+        <th>Total amount</th>
+       
+        
+      </tr>
+    </thead>
+  
+    <tbody>
+    
+    <tr>
+      <td><%= @cryptotable.symbol %></td>
+      <td><%= @cryptotable.total_quantity %></td>
+      <td><%= @cryptotable.unit_price %></td>
+      <td><%= @cryptotable.total_amount %></td>
+      
+    </tr>
+      
+    </tbody>
+  </table>
+  
+  
+  
+  <br/>
+  
+  <div class="container text-center">
 
-<p>
-  <strong>Unit price:</strong>
-  <%= @cryptotable.unit_price %>
-</p>
+  <%= link_to 'Back to Account', cryptotables_path, class: 'btn btn-dark mr-5' %>
+  <%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-dark' %>
 
-<p>
-  <strong>Total amount:</strong>
-  <%= @cryptotable.total_amount %>
-</p>
+  </div>
 
-<%= link_to 'Edit', edit_cryptotable_path(@cryptotable), class: 'btn btn-dark mr-5' %> 
+</div>
 
-<%= link_to 'Back to Account', cryptotables_path, class: 'btn btn-dark mr-5' %>
 
-<%= link_to 'Look for New Cryptocurrency', new_cryptotable_path, class: 'btn btn-dark mr-5'%><br/><br/>
-
-<td><%= link_to 'Destroy', cryptotable_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'mr-5' %></td>
-
-<%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-dark' %>
+  
