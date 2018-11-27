@@ -1,15 +1,16 @@
+<p id="notice"><%= notice %></p>
+<% profitloss= 0 %>
 
-
-<h1>Currencies</h1>
+<h1>Currencies Simulations</h1>
 
 <table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
       
       <th>Symbol</th>
-      <th>Quantity</th>
-      <th>Unit price</th>
-      <th>Total amount</th>
+      <th>Quantity(User)</th>
+      <th>Unit price(User)</th>
+      <th>Total amount(User)</th>
       <th>Current Day Price</th>
       <th>Total Amount Day Price</th>
       <th>Profit/Loss</th>
@@ -33,6 +34,7 @@
         <td><%= current_day_price %></td>
         <td><%= currency.quantity * current_day_price %></td>
         <td><%= (currency.quantity * current_day_price) - currency.total_amount %></td>
+        <% profitloss += (currency.quantity * current_day_price) - currency.total_amount %>
         <td><%= link_to 'Show', currency, class: 'mr-5' %></td>
         <td><%= link_to 'Edit', edit_currency_path(currency), class: 'mr-5' %></td>
         
@@ -46,11 +48,17 @@
 <br/>
 
 <div class="container text-center">
+<strong> Total Profit/Loss:<%=profitloss %></strong>
+</div>
+<br/>
 
-<%= link_to 'New Currency', new_currency_path, class: 'btn btn-dark mr-5' %>
+<div class="container text-center">
 
-<%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-dark mr-5' %>
+<%= link_to 'New Currency', new_currency_path, class: 'btn btn-primary mr-5' %>
 
-<%= link_to 'Export to CSV', export_csv_path, class: 'btn btn-dark mr-5' %>
+<%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-primary mr-5' %>
+
+<%= link_to 'Export to CSV', export_csv_path, class: 'btn btn-primary mr-5' %>
 
 </div>
+

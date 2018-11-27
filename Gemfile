@@ -52,6 +52,8 @@ gem 'csv_export'
 
 gem 'bitcoinaverage-ruby', git: 'https://github.com/nassimakaracloud/bitcoinaverage-ruby'
 
+gem 'paperclip', '~> 6.1'
+
 
 
 group :development, :test do

@@ -4,11 +4,11 @@
 
   
   <div class="container">
-    <%= link_to 'Edit', edit_cryptotable_path(@cryptotable), class: ' btn btn-dark mr-5 float-right' %>
+    <%= link_to 'Edit', edit_cryptotable_path(@cryptotable), class: ' btn btn-primary mr-5 float-right' %>
   
-    <%= link_to 'Delete', cryptotable_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-dark mr-5 float-right' %>
+    <%= link_to 'Delete', cryptotable_path, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary mr-5 float-right' %>
    
-    <%= link_to 'Look for New Cryptocurrency', new_cryptotable_path, class: 'btn btn-dark float-right mr-5'%><br/>
+    <%= link_to 'Look for New Cryptocurrency', new_cryptotable_path, class: 'btn btn-primary float-right mr-5'%><br/>
     
      
   </div>
@@ -45,8 +45,8 @@
   
   <div class="container text-center">
 
-  <%= link_to 'Back to Account', cryptotables_path, class: 'btn btn-dark mr-5' %>
-  <%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-dark' %>
+  <%= link_to 'Back to Account', cryptotables_path, class: 'btn btn-primary mr-5' %>
+  <%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-primary' %>
 
   </div>
 

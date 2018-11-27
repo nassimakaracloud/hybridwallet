@@ -1,9 +1,9 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe WelcomeController, :type => :controller do
-    describe "GET #index" do
+    describe "GET #lookupcrypto" do
         it "returns a successful http status code" do
-            get "index"
+            get "lookupcrypto"
             response.should be_success
         end
     end

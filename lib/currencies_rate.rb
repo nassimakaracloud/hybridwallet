@@ -14,7 +14,7 @@ module CurrenciesRate
     end
     
     def ticker_data(base, rates)
-        path = "/latest?access_key=293944c19667c2bf2650287d9c75e1f8"
+        path = "/latest?access_key=a78952caffb0f23f9b3080beb66350e7"
         make_call path
     end
     

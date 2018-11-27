@@ -71,22 +71,25 @@ class CurrenciesController < ApplicationController
     retrieve_data
     currencies = Currency.all
     
-      export_array = [['Symbol', 'Quantity', 'Unit Price', 'Total Amount', 'Current Price', 'Current', 'Total Amount Day Price', 'Profit/Loss']]
+      export_array = [['Symbol', 'Quantity', 'Unit Price', 'Total Amount', 'Current Price', 'Total Amount Day Price', 'Profit/Loss']]
       
       currencies.each do |currency|
-      export_line = []
-      export_line << currency.symbol
-      export_line << currency.user_id
-      export_line << currency.quantity
-      export_line << currency.unit_price
-      export_line << currency.total_amount
-      current_day_price = @lookup_currency['rates'][currency.symbol]
-      export_line << current_day_price
-      export_line << currency.quantity * current_day_price
-      export_line << (currency.quantity * current_day_price) - currency.total_amount
-      puts export_line
-      export_array << export_line
-    end
+        if @lookup_currency['rates'][currency.symbol].present?
+          export_line = []
+          export_line << currency.symbol
+          export_line << currency.quantity
+          export_line << currency.unit_price
+          export_line << currency.total_amount
+          current_day_price = @lookup_currency['rates'][currency.symbol]
+          export_line << current_day_price
+          puts current_day_price
+          puts "Current day price: #{currency.id} :: #{currency.symbol}"
+          export_line << currency.quantity * current_day_price
+          export_line << (currency.quantity * current_day_price) - currency.total_amount
+          puts export_line
+          export_array << export_line
+        end
+      end
     
     puts export_array
     export_to_csv('Filename', export_array, {separator: ','})
@@ -107,7 +110,7 @@ class CurrenciesController < ApplicationController
       require 'net/http'
       require 'json'
       @currencies = Currency.all
-      @url= 'http://data.fixer.io/api/latest?access_key=293944c19667c2bf2650287d9c75e1f8'
+      @url= 'http://data.fixer.io/api/latest?access_key=a78952caffb0f23f9b3080beb66350e7'
       @uri= URI(@url)
       @response= Net::HTTP.get(@uri)
       @lookup_currency= JSON.parse(@response)

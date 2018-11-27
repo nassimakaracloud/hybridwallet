@@ -7,4 +7,12 @@ class Cryptotable < ApplicationRecord
         total_quantity * unit_price
       end
     end
+    
+    def add_api_client
+      @bitcoin_avg_api = BitcoinAverage::HTTP.new
+    end
+    
+    def lookup_value
+      JSON.parse @bitcoin_avg_api.ticker_data('global', params[:symbol]).body
+    end
 end

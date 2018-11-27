@@ -4,11 +4,11 @@
 
 <div class="container">
   
-  <%= link_to 'Look for New Currency', new_currency_path, class: 'btn btn-dark mr-5 float-right'%>
+  <%= link_to 'Look for New Currency', new_currency_path, class: 'btn btn-primary mr-5 float-right'%>
   
-  <%= link_to 'Delete', currency_path(@currency), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark mr-5 float-right' %>
+  <%= link_to 'Delete', currency_path(@currency), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary mr-5 float-right' %>
   
-  <%= link_to 'Edit', edit_currency_path(@currency), class: 'btn btn-dark mr-5 float-right' %>
+  <%= link_to 'Edit', edit_currency_path(@currency), class: 'btn btn-primary mr-5 float-right' %>
 
   
   
@@ -40,7 +40,7 @@
 
 <div class="container text-center">
 
-<%= link_to 'Back to Account', currencies_path, class: 'btn btn-dark mr-5' %>
+<%= link_to 'Back to Account', currencies_path, class: 'btn btn-primary mr-5' %>
 
-<%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-dark' %>
+<%= link_to 'Back to Home Page', home_home_path, class: 'btn btn-primary' %>
 </div>

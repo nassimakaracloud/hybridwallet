@@ -65,6 +65,32 @@ class CryptotablesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+ def cryptotableexport_csv
+    @cryptotables = Cryptotable.all
+    retrieve_data
+      export_array = [['Symbol', 'Total quantity (User)', 'Unit price (User)', 'Last Day Price','Total Amount Last Price', 'Profit/Loss']]
+      
+      @cryptotables.each do |cryptotable|
+        if @lookup_crypto[cryptotable.symbol].present?
+          export_line = []
+          export_line << cryptotable.symbol
+          export_line << cryptotable.total_quantity
+          export_line << cryptotable.unit_price
+          export_line << cryptotable.total_amount
+          cryptotable_last_price = @lookup_crypto[cryptotable.symbol]['last']
+          export_line << cryptotable_last_price
+          puts cryptotable_last_price
+          export_line << cryptotable.total_quantity * cryptotable_last_price
+          export_line << (cryptotable.total_quantity * cryptotable_last_price) - cryptotable.total_amount
+          puts export_line
+          export_array << export_line
+        end
+      end
+    
+    puts export_array
+    export_to_csv('Filename', export_array, {separator: ','})
+  end  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -78,11 +104,10 @@ class CryptotablesController < ApplicationController
     end
     
     def retrieve_data
-      api_client = BitcoinAverage::HTTP.new
       @lookup_crypto = {}
       @cryptotables.each do |item|
-        response = api_client.ticker_data('global', item.symbol).body
-
+        item.add_api_client
+        response = item.lookup_value
         unless response.scan('not supported').length > 0
           @lookup_crypto[item.symbol] = JSON.parse response
         end  
