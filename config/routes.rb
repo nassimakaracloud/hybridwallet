@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   get 'home/lookupcrypto'
   post "home/lookupcrypto", to: "lookupcrypto#lookupcrypto"
   get 'home//users/edit'
-  get 'home/profile'
   get 'home/home'
   get 'welcome/faq'
   get 'welcome/about'

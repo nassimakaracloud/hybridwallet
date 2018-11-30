@@ -1,9 +1,5 @@
 class WelcomeController < ApplicationController
     
-    
-    def welcome
-    end
-    
     def about
     end
     
@@ -13,6 +9,5 @@ class WelcomeController < ApplicationController
     def index
         puts current_user
     end    
-
 
 end

@@ -56,6 +56,7 @@ gem 'paperclip', '~> 6.1'
 
 
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -67,8 +68,10 @@ group :development, :test do
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
   # Guard::RSpec automatically run your specs (much like autotest).
   gem 'guard-rspec', '~> 4.7', '>= 4.7.3', require: false
-  
+  #An IRB alternative and runtime developer console
   gem 'pry-rails'
+  
+  
 end
 
 group :development do
