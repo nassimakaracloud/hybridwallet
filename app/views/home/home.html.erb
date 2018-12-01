@@ -28,6 +28,7 @@
         <th>Today Low</th>
         <th>24h average</th>
         <th>Global vol</th>
+        <th>Predictions</th>
     </thead>
     <tbody>
         <tr>
@@ -37,6 +38,7 @@
             <td><%= @bitcoin['low'] %></td>
             <td><%= @bitcoin['averages']['day'] %></td>
             <td><%= @bitcoin['volume'] %></td>
+            <td><%= link_to 'Predict', home_home_path, :class => "btn btn-primary" %></td>
         </tr>
         <tr>
             <td>Ethereum</td>
@@ -45,6 +47,7 @@
             <td><%= @ethereum['low'] %></td>
             <td><%= @ethereum['averages']['day'] %></td>
             <td><%= @ethereum['volume'] %></td>
+            <td><%= link_to 'Predict', home_home_path, :class => "btn btn-primary" %></td>
         </tr>
         <tr>
             <td>Litecoin</td>
@@ -53,6 +56,7 @@
             <td><%= @litecoin['low'] %></td>
             <td><%= @litecoin['averages']['day'] %></td>
             <td><%= @litecoin['volume'] %></td>
+            <td><%= link_to 'Predict', home_home_path, :class => "btn btn-primary" %></td>
         </tr>
         
         <tr>
@@ -62,6 +66,7 @@
             <td><%= @ZCash['low'] %></td>
             <td><%= @ZCash['averages']['day'] %></td>
             <td><%= @ZCash['volume'] %></td>
+            <td><%= link_to 'Predict', home_home_path, :class => "btn btn-primary" %></td>
         </tr>
         
     </tbody>

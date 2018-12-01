@@ -49,8 +49,9 @@ gem 'csv_export'
 #A simple Ruby wrapper for BitCoin Average API
 gem 'bitcoinaverage-ruby', git: 'https://github.com/nassimakaracloud/bitcoinaverage-ruby'
 
+gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 
-
+gem 'aws', '~> 2.10', '>= 2.10.2'
 
 
 group :development, :test do
