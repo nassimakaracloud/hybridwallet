@@ -1,8 +1,7 @@
 require 'currencies_rate'
 
 class HomeController < ApplicationController
-  before_action:authenticate_user!
-  before_action:user_signed_in?
+  
   
 
   def home

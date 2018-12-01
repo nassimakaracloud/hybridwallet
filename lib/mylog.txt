@@ -1,0 +1,19 @@
+Retrieving data for ltcAdding the decorator
+Retrieving data for usd
+Adding the decorator
+Retrieving data for eur
+Adding the decorator
+Retrieving data for BTCUSD
+Adding the decorator
+Retrieving data for LTCUSD
+Crytable has changed: BTCUSD
+Adding the decorator
+Retrieving data for ltc
+Adding the decorator
+Retrieving data for usd
+Adding the decorator
+Retrieving data for eur
+Adding the decorator
+Retrieving data for BTCUSD
+Adding the decorator
+Retrieving data for LTCUSD

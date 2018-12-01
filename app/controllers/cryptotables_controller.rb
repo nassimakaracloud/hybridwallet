@@ -1,8 +1,7 @@
 class CryptotablesController < ApplicationController
   before_action :set_cryptotable, only: [:show, :edit, :update, :destroy]
-  before_action:authenticate_user!
-  before_action:user_signed_in?
   
+   require 'my_logger'
   
 
   # GET /cryptotables
@@ -19,6 +18,7 @@ class CryptotablesController < ApplicationController
 
   # GET /cryptotables/new
   def new
+   
     @cryptotable = Cryptotable.new
   end
 
@@ -107,11 +107,10 @@ class CryptotablesController < ApplicationController
       @lookup_crypto = {}
       @cryptotables.each do |item|
         item.add_api_client
-        response = item.lookup_value
-        unless response.scan('not supported').length > 0
-          @lookup_crypto[item.symbol] = JSON.parse response
-        end  
+        @lookup_crypto[item.symbol] = item.lookup_value(item.symbol)
       end
     end
+    
+  
     
 end
