@@ -108,7 +108,7 @@ class CurrenciesController < ApplicationController
       require 'net/http'
       require 'json'
       @currencies = Currency.all
-      @url= 'http://data.fixer.io/api/latest?access_key=a78952caffb0f23f9b3080beb66350e7'
+      @url= 'http://data.fixer.io/api/latest?access_key=5ac845865fadbf5819b8ff3b0f15ef0d'
       @uri= URI(@url)
       @response= Net::HTTP.get(@uri)
       @lookup_currency= JSON.parse(@response)
