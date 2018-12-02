@@ -54,6 +54,8 @@ gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'aws', '~> 2.10', '>= 2.10.2'
 
 
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -81,6 +83,8 @@ group :development do
   gem 'spring', '~> 2.0', '>= 2.0.2'
   #Makes spring watch files using the listen gem.
   gem 'spring-watcher-listen', '~> 2.0', '>= 2.0.1'
+  
+  gem 'brakeman', '~> 4.3', '>= 4.3.1', :require => false
 end
 
 group :test do
