@@ -1,14 +1,15 @@
 <table>
+  
+  <table class="table table-bordered">
+    <thead class="thead-dark">
 
             <tr>
             
             <% if @ZCash %>
               <td>ZCASH</td>
-              <td><%= @ZCash['open']['day'] %></td>
               <td><%= @ZCash['high'] %></td>
               <td><%= @ZCash['low'] %></td>
-              <td><%= @ZCash['averages']['day'] %></td>
-              <td><%= @ZCash['volume'] %></td>
+              <td><%= @ZCash['average'] %></td>
             <% else %>
               <td>There was an error retrieving data</td>
               <td><%= link_to 'Back', :back, class: 'btn btn-sm btn-primary' %></td>

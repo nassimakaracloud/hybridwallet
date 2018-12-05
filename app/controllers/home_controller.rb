@@ -35,15 +35,20 @@ class HomeController < ApplicationController
       'month'=>12,
       'day'=>3,
       'hour'=>00,
-      'minutes'=>00,
+      'minute'=>00,
       'high'=> @ZCashcurrent['high'],
       'low'=>@ZCashcurrent['low'],
-      'average'=>@ZCashcurrent['average'],
+      'average'=>@ZCashcurrent['averages']['day'],
       
     }
     api_machinelearning = MachineLearning::HTTP.new
-    result = JSON.parse api_machinelearning.prediction_zcash(data).body
-    @ZCash = result['error'].present? ? nil : results
+    result = api_machinelearning.prediction_zcash(data)
+    only_result = result["Results"]["output1"]["value"]["Values"][0]
+    @ZCash = {
+        'high' => only_result[5],
+        'low' => only_result[6],
+        'average' => only_result[7]
+    }
   end
   
 end
