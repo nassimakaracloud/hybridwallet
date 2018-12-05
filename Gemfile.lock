@@ -328,6 +328,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   csv_export
   devise (~> 4.5)
+  dotenv
   dotenv-rails
   guard-rspec (~> 4.7, >= 4.7.3)
   httparty
