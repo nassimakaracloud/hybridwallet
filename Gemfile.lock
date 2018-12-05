@@ -56,10 +56,21 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (9.3.1)
       execjs
-    aws (2.10.2)
-      http_connection
-      uuidtools
-      xml-simple
+    aws-eventstream (1.0.1)
+    aws-partitions (1.121.0)
+    aws-sdk-core (3.42.0)
+      aws-eventstream (~> 1.0)
+      aws-partitions (~> 1.0)
+      aws-sigv4 (~> 1.0)
+      jmespath (~> 1.0)
+    aws-sdk-kms (1.13.0)
+      aws-sdk-core (~> 3, >= 3.39.0)
+      aws-sigv4 (~> 1.0)
+    aws-sdk-s3 (1.29.0)
+      aws-sdk-core (~> 3, >= 3.39.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.0)
+    aws-sigv4 (1.0.3)
     bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.3.2)
@@ -79,10 +90,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.2)
       xpath (~> 3.2)
-    carrierwave (1.2.3)
-      activemodel (>= 4.0.0)
-      activesupport (>= 4.0.0)
-      mime-types (>= 1.16)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (2.1.0)
@@ -109,6 +116,10 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
+    dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
     erubi (1.7.1)
     execjs (2.7.0)
     fastercsv (1.5.5)
@@ -130,7 +141,6 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    http_connection (1.4.4)
     httparty (0.16.3)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -140,6 +150,7 @@ GEM
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jmespath (1.4.0)
     jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -289,7 +300,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
-    uuidtools (2.1.5)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -300,7 +310,6 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-    xml-simple (1.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
@@ -308,18 +317,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws (~> 2.10, >= 2.10.2)
+  aws-sdk-s3
   bitcoinaverage-ruby!
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.1, >= 4.1.3)
   brakeman (~> 4.3, >= 4.3.1)
   byebug
   capybara (~> 3.11, >= 3.11.1)
-  carrierwave (~> 1.2, >= 1.2.3)
   chromedriver-helper
   coffee-rails (~> 4.2)
   csv_export
   devise (~> 4.5)
+  dotenv-rails
   guard-rspec (~> 4.7, >= 4.7.3)
   httparty
   jbuilder (~> 2.5)

@@ -1,4 +1,5 @@
 require 'currencies_rate'
+require 'machinelearning'
 
 class HomeController < ApplicationController
   
@@ -24,6 +25,26 @@ class HomeController < ApplicationController
   
   
   def lookupcurrency
-  end 
+  end
+  
+  def prediction
+    api_client = BitcoinAverage::HTTP.new
+    @ZCashcurrent = JSON.parse api_client.ticker_data('global', 'ZECUSD').body
+    data={
+      'year'=>2018,
+      'month'=>12,
+      'day'=>3,
+      'hour'=>00,
+      'minutes'=>00,
+      'high'=> @ZCashcurrent['high'],
+      'low'=>@ZCashcurrent['low'],
+      'average'=>@ZCashcurrent['average'],
+      
+    }
+    api_machinelearning = MachineLearning::HTTP.new
+    @ZCash = JSON.parse api_machinelearning.prediction_zcash(data).body
+    
+    
+  end
   
 end

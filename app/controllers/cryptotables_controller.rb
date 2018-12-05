@@ -69,7 +69,7 @@ class CryptotablesController < ApplicationController
  def cryptotableexport_csv
     @cryptotables = Cryptotable.all
     retrieve_data
-      export_array = [['Symbol', 'Total quantity (User)', 'Unit price (User)', 'Last Day Price','Total Amount Last Price', 'Profit/Loss']]
+      export_array = [['Symbol', 'Total quantity (User)', 'Unit price (User)','Total Amoun(User)','Last Day Price','Total Amount Last Price', 'Profit/Loss']]
       
       @cryptotables.each do |cryptotable|
         if @lookup_crypto[cryptotable.symbol].present?
@@ -100,7 +100,7 @@ class CryptotablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cryptotable_params
-      params.require(:cryptotable).permit(:symbol, :user_id, :total_quantity,:unit_price, :total_amount)
+      params.require(:cryptotable).permit(:symbol, :user_id, :total_quantity,:unit_price, :total_amount, :myfile)
     end
     
     def retrieve_data
@@ -111,6 +111,6 @@ class CryptotablesController < ApplicationController
       end
     end
     
-  
+   
     
 end

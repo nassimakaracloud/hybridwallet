@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 ruby '2.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -49,9 +51,10 @@ gem 'csv_export'
 #A simple Ruby wrapper for BitCoin Average API
 gem 'bitcoinaverage-ruby', git: 'https://github.com/nassimakaracloud/bitcoinaverage-ruby'
 
-gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+gem "aws-sdk-s3", require: false
 
-gem 'aws', '~> 2.10', '>= 2.10.2'
+
+
 
 
 

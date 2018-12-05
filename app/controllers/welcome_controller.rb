@@ -1,6 +1,9 @@
 class WelcomeController < ApplicationController
     
-    def about
+    def mission
+    end
+    
+    def presentation
     end
     
     def faq
