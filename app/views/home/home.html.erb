@@ -14,14 +14,14 @@
             <%= link_to "Manage Profile", edit_user_registration_path, :class => "btn btn-primary" %>
       </div>
       
-     <%= link_to 'Predict', home_prediction_path, :class => "btn btn-primary" %>
+     
       
 </div>
   
 
  <br/>
 
-<table class="table table-bordered modal-dialog modal-lg">
+<table class="table table-bordered">
     <thead class="thead-dark">
         <th>Symbol Cryptocurrency</th>
         <th>Today Open</th>
@@ -67,6 +67,7 @@
             <td><%= @ZCash['low'] %></td>
             <td><%= @ZCash['averages']['day'] %></td>
             <td><%= @ZCash['volume'] %></td>
+            <td><%= link_to 'Predict', home_prediction_path, :class => "btn btn-primary" %></td>
             
             
         </tr>

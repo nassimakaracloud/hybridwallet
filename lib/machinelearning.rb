@@ -3,7 +3,7 @@ module MachineLearning
   class HTTP
     include HTTParty
     
-    base_uri "https://europewest.services.azureml.net"
+    base_uri "https://europewest.services.azureml.net/workspaces/7c52c9e5183446c4b1d5d62fb5f732fe/services/5884d7e1d82b41bfb01c060749e03c03/jobs?api-version=2.0"
     
     def initialize
     end

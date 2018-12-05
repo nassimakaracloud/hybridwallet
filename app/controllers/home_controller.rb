@@ -42,9 +42,8 @@ class HomeController < ApplicationController
       
     }
     api_machinelearning = MachineLearning::HTTP.new
-    @ZCash = JSON.parse api_machinelearning.prediction_zcash(data).body
-    
-    
+    result = JSON.parse api_machinelearning.prediction_zcash(data).body
+    @ZCash = result['error'].present? ? nil : results
   end
   
 end

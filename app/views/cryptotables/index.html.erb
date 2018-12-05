@@ -24,7 +24,14 @@
       <%if cryptotable.user_id == current_user.id %>
       
         <% api_result = @lookup_crypto[cryptotable.symbol] %>
-        <% if api_result %>
+        <% if api_result['error_message'] %>
+          <tr>
+            <td><%= cryptotable.symbol %></td>
+            <td colspan="6">Not supported</td>
+            <td><%= link_to 'Show', cryptotable, class: 'mr-5' %></td>
+            <td><%= link_to 'Edit', edit_cryptotable_path(cryptotable), class: 'mr-5' %></td>
+          </tr>
+        <% else %>
          <tr>
           <% cryptotable_last_price = api_result['last'] %>
         

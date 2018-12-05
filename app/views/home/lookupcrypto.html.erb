@@ -10,7 +10,9 @@
 <br/>
 
         <div class="symbol">
-            <% if @symbol %>
+            <% if @symbol['error_message'].present? %>
+               Not supported
+            <% else %>
                  High: <%= @symbol['high'] %>
             <% end %>
   

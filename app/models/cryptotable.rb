@@ -21,7 +21,7 @@ class Cryptotable < ApplicationRecord
       my_logger.logInformation "Retrieving data for #{symbol}"
       response = @bitcoin_avg_api.ticker_data('global', symbol).body
       if response.scan('not supported').length > 0
-        return nil
+        {symbol => symbol, 'error_message' => 'Not supported'}
       else
         JSON.parse response 
       end

@@ -1,13 +1,22 @@
 <table>
 
             <tr>
-            <td>ZCASH</td>
-            <td><%= @ZCash['open']['day'] %></td>
-            <td><%= @ZCash['high'] %></td>
-            <td><%= @ZCash['low'] %></td>
-            <td><%= @ZCash['averages']['day'] %></td>
-            <td><%= @ZCash['volume'] %></td>
             
+            <% if @ZCash %>
+              <td>ZCASH</td>
+              <td><%= @ZCash['open']['day'] %></td>
+              <td><%= @ZCash['high'] %></td>
+              <td><%= @ZCash['low'] %></td>
+              <td><%= @ZCash['averages']['day'] %></td>
+              <td><%= @ZCash['volume'] %></td>
+            <% else %>
+              <td>There was an error retrieving data</td>
+              <td><%= link_to 'Back', :back, class: 'btn btn-sm btn-primary' %></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            <% end %>
             </tr>
             
 </table>
