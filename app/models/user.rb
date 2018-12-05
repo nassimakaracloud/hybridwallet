@@ -6,4 +6,6 @@ class User < ApplicationRecord
          has_many :cryptotables
          has_many :currencies
          
+         has_many :file_lists
+         
 end

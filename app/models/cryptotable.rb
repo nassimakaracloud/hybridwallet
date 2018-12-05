@@ -2,8 +2,6 @@ class Cryptotable < ApplicationRecord
     belongs_to :user
     attr_accessor :bitcoin_avg_api
     
-    has_one_attached :myfile
-    
     def total_amount
       if unit_price.present? && total_quantity.present?
         puts total_quantity * unit_price

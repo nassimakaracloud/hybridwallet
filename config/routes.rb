@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
     
-  get 'document/index'
-  get 'document/new'
-  get 'document/create'
-  get 'document/destroy'
   resources :currencies
   resources :cryptotables
   devise_for :users
+  
+  post 'attachments' => 'file_lists#create', as: 'file_lists'
   
   get 'home/prediction'
   get 'cryptotableexport_to_csv' => 'cryptotables#cryptotableexport_csv', as: 'cryptotableexport_csv'
