@@ -44,7 +44,7 @@ module MachineLearning
           :headers => {
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
-          'Authorization' => 'Bearer 8aBFHZ2o8n337BHwSpJJvYKxLwAG2lry4Ohs/5C3S4SjCHPKCGyRSGgkO4XGRWjTYmyH6wgeJsLflBV/vj6+sQ=='
+            'Authorization' => 'Bearer ' + ENV['ML_ZCASH']
           }
         }
       )

@@ -44,7 +44,7 @@ module MachineLearningBitcoin
           :headers => {
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
-          'Authorization' => 'Bearer Ri8eETG17smrFPkWk9l8XkyGmoKtqHj3w+aS6VLNCw3YCJTgQI1qnQ5enntGYO+WiODDUFtUptMaelVEuqORmg=='
+            'Authorization' => 'Bearer ' + ENV['ML_BITCOIN']
           }
         }
       )
