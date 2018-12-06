@@ -27,7 +27,7 @@
         <th>Today Open</th>
         <th>Today High</th>
         <th>Today Low</th>
-        <th>24h average</th>
+        <th>24h Average</th>
         <th>Global vol</th>
         <th>Predictions</th>
     </thead>
@@ -39,7 +39,7 @@
             <td><%= @bitcoin['low'] %></td>
             <td><%= @bitcoin['averages']['day'] %></td>
             <td><%= @bitcoin['volume'] %></td>
-            <td><%= link_to 'Predict', home_home_path, :class => "btn btn-primary" %></td>
+            <td><%= link_to 'Predict', home_predictionbitcoin_path, :class => "btn btn-primary" %></td>
         </tr>
         <tr>
             <td>Ethereum</td>

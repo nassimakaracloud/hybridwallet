@@ -11,6 +11,14 @@
     <ul class="nav navbar-nav">
       <li><%= link_to "FAQ", welcome_faq_path %></li>
     </ul>
+    
+    <ul class="nav navbar-nav">
+      <% if current_admin %>
+        <li><%= link_to "<span class=\"glyphicon glyphicon-user\"></span>Sign Out".html_safe, destroy_admin_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Admin", new_admin_session_path %></li>
+      <% end %>
+    </ul>
     <% if current_user %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "<span class=\"glyphicon glyphicon-user\"></span>Sign Out".html_safe, destroy_user_session_path, method: :delete %></li>

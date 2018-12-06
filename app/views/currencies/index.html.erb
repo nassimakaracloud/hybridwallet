@@ -60,5 +60,8 @@
 
 <%= link_to 'Export to CSV', export_csv_path, class: 'btn btn-primary mr-5' %>
 
+<%= link_to 'Upload File', 'javascript:void(0);', class: 'btn btn-primary', data: {toggle: 'modal', target: '#file_upload_modal'} %>
+
 </div>
 
+<%= render "upload/upload" %>

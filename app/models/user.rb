@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :cryptotables
          has_many :currencies
-         
          has_many :file_lists
          
 end

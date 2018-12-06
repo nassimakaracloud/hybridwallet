@@ -1,6 +1,7 @@
 class CryptotablesController < ApplicationController
   before_action :set_cryptotable, only: [:show, :edit, :update, :destroy]
-  
+  before_action :authenticate_user!
+  before_action :user_signed_in?
    require 'my_logger'
   
 

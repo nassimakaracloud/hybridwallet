@@ -1,5 +1,6 @@
 class LookupcryptoController < ApplicationController
-  
+  before_action :authenticate_user!
+  before_action :user_signed_in?
   
 
     def lookupcrypto

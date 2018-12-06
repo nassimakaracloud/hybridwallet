@@ -11,11 +11,11 @@
      </thead>
      <tr>
             
-            <% if @ZCash %>
-              <td>ZCASH</td>
-              <td><%= @ZCash['high'] %></td>
-              <td><%= @ZCash['low'] %></td>
-              <td><%= @ZCash['average'] %></td>
+            <% if @bitcoin %>
+              <td>Bitcoin</td>
+              <td><%= @bitcoin['high'] %></td>
+              <td><%= @bitcoin['low'] %></td>
+              <td><%= @bitcoin['average'] %></td>
             <% else %>
               <td>There was an error retrieving data</td>
               <td><%= link_to 'Back', :back, class: 'btn btn-sm btn-primary' %></td>

@@ -1,6 +1,8 @@
 require 'currencies_rate'
 class CurrenciesController < ApplicationController
   before_action :set_currency, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :user_signed_in?
   require 'my_logger'
   
  

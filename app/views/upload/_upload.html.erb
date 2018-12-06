@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div class="modal fade" id="file_upload_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="file_upload_modal_title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="form-group">
+        <div class="modal-body">
+          <%= form_for current_user.file_lists.new, class: 'form' do |f| %>
+              <%= f.label :description %>
+              <%= f.text_field :description, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label 'File' %>
+              <%= f.file_field :attachment, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="form-actions">
+              <%= link_to 'Close', 'javascript:void(0)', class: 'btn btn-secondary', data: {dismiss: 'modal'} %>
+              <%= f.submit 'Upload', class: 'btn btn-primary' %>
+            </div>
+        </div>
+      <% end %> 
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   get'admin/admin'
   post 'attachments' => 'file_lists#create', as: 'file_lists'
+  get 'home/predictionbitcoin'
   get 'home/prediction'
   get 'cryptotableexport_to_csv' => 'cryptotables#cryptotableexport_csv', as: 'cryptotableexport_csv'
   get 'export_to_csv' => 'currencies#export_csv', as: 'export_csv'
