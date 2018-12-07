@@ -89,10 +89,7 @@ group :development do
   
   gem 'brakeman', '~> 4.3', '>= 4.3.1', :require => false
   
-  gem 'capistrano-secrets-yml', '~> 1.2', '>= 1.2.1'
-  
-  gem 'capistrano', '~> 3.11'
-  
+ 
 end
 
 group :test do
