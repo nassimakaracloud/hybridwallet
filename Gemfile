@@ -51,6 +51,8 @@ gem 'bitcoinaverage-ruby', git: 'https://github.com/nassimakaracloud/bitcoinaver
 
 gem "aws-sdk-s3", require: false
 
+gem 'rails-html-sanitizer', '~> 1.0', '>= 1.0.4'
+
 
 
 group :development, :test do
