@@ -15,11 +15,11 @@
      </thead>
      <tr>
             
-            <% if @bitcoin %>
-              <td>Bitcoin</td>
-              <td><%= @bitcoin['high'] %></td>
-              <td><%= @bitcoin['low'] %></td>
-              <td><%= @bitcoin['average'] %></td>
+            <% if @ethereum %>
+              <td>Ethereum</td>
+              <td><%= @ethereum['high'] %></td>
+              <td><%= @ethereum['low'] %></td>
+              <td><%= @ethereum['average'] %></td>
             <% else %>
               <td>There was an error retrieving data</td>
               <td><%= link_to 'Back', :back, class: 'btn btn-sm btn-primary' %></td>

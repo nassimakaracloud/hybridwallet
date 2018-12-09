@@ -1,6 +1,8 @@
 require 'currencies_rate'
 require 'machinelearning'
 require 'machinelearningbitcoin'
+require 'machinelearningethereum'
+require 'machinelearninglitecoin'
 
 class HomeController < ApplicationController
   before_action :authenticate_user!
@@ -35,7 +37,7 @@ class HomeController < ApplicationController
     data={
       'year'=>2018,
       'month'=>12,
-      'day'=>3,
+      'day'=>30,
       'hour'=>00,
       'minute'=>00,
       'high'=> @ZCashcurrent['high'],
@@ -63,7 +65,7 @@ class HomeController < ApplicationController
     data={
       'year'=>2018,
       'month'=>12,
-      'day'=>3,
+      'day'=>30,
       'hour'=>00,
       'minute'=>00,
       'high'=> @bitcoincurrent['high'],
@@ -80,5 +82,60 @@ class HomeController < ApplicationController
         'average' => only_result[7]
     }
   end
+
+ def predictionethereum
+ 
+    api_client = BitcoinAverage::HTTP.new
+    @ethereumcurrent = JSON.parse api_client.ticker_data('global', 'ETHUSD').body
+    data={
+      'year'=>2018,
+      'month'=>12,
+      'day'=>30,
+      'hour'=>00,
+      'minute'=>00,
+      'high'=> @ethereumcurrent['high'],
+      'low'=>@ethereumcurrent['low'],
+      'average'=>@ethereumcurrent['averages']['day'],
+      
+    }
+    api_machinelearningethereum = MachineLearningEthereum::HTTP.new
+    
+    result = api_machinelearningethereum.prediction_ethereum(data)
+    
+    only_result = result["Results"]["output1"]["value"]["Values"][0]
+    @ethereum = {
+        'high' => only_result[5],
+        'low' => only_result[6],
+        'average' => only_result[7]
+    }
+  end
+  
+  def predictionlitecoin
+ 
+    api_client = BitcoinAverage::HTTP.new
+    @litecoincurrent = JSON.parse api_client.ticker_data('global', 'LTCUSD').body
+    data={
+      'year'=>2018,
+      'month'=>12,
+      'day'=>30,
+      'hour'=>00,
+      'minute'=>00,
+      'high'=> @litecoincurrent['high'],
+      'low'=>@litecoincurrent['low'],
+      'average'=>@litecoincurrent['averages']['day'],
+      
+    }
+    api_machinelearninglitecoin = MachineLearningLitecoin::HTTP.new
+    
+    result = api_machinelearninglitecoin.prediction_litecoin(data)
+    
+    only_result = result["Results"]["output1"]["value"]["Values"][0]
+    @litecoin = {
+        'high' => only_result[5],
+        'low' => only_result[6],
+        'average' => only_result[7]
+    }
+  end
+ 
   
 end
