@@ -1,10 +1,26 @@
 require 'rails_helper'
-
-describe WelcomeController, :type => :controller do
-    describe "GET #index" do
-        it "returns a successful http status code" do
-            get "index"
-            response.should be_success
-        end
+RSpec.describe WelcomeController, type: :controller do
+end
+require 'rails_helper'
+RSpec.describe WelcomeController, type: :controller do
+  describe "GET #:index" do
+    it "returns http success" do
+      get :index
+      expect(response).to have_http_status(:success)
     end
+  end
+
+  describe "GET #:faq" do
+    it "returns http success" do
+      get :faq
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe "GET #:about" do
+    it "returns http success" do
+      get :about
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
