@@ -1124,3 +1124,70 @@ Adding the decorator
 Retrieving data for usd
 Adding the decorator
 Retrieving data for BTCUSD
+Adding the decorator
+Retrieving data for ltc
+Adding the decorator
+Retrieving data for usd
+Adding the decorator
+Retrieving data for eur
+Adding the decorator
+Retrieving data for BTCUSD
+Adding the decorator
+Retrieving data for LTCUSD
+Adding the decorator
+Retrieving data for 177107
+Adding the decorator
+Retrieving data for tod53mjwxd8ps7ooknw8s5s9pvi19i3ik89
+Adding the decorator
+Retrieving data for usd
+Adding the decorator
+Retrieving data for BTCUSD
+Crytable has changed: ZECUSD
+Adding the decorator
+Retrieving data for ltc
+Adding the decorator
+Retrieving data for usd
+Adding the decorator
+Retrieving data for eur
+Adding the decorator
+Retrieving data for BTCUSD
+Adding the decorator
+Retrieving data for LTCUSD
+Adding the decorator
+Retrieving data for 177107
+Adding the decorator
+Retrieving data for tod53mjwxd8ps7ooknw8s5s9pvi19i3ik89
+Adding the decorator
+Retrieving data for usd
+Adding the decorator
+Retrieving data for BTCUSD
+Adding the decorator
+Retrieving data for ZECUSD
+Adding the decorator
+Retrieving data for ltc
+Adding the decorator
+Retrieving data for usd
+Adding the decorator
+Retrieving data for eur
+Adding the decorator
+Retrieving data for BTCUSD
+Adding the decorator
+Retrieving data for LTCUSD
+Adding the decorator
+Retrieving data for 177107
+Adding the decorator
+Retrieving data for tod53mjwxd8ps7ooknw8s5s9pvi19i3ik89
+Adding the decorator
+Retrieving data for usd
+Adding the decorator
+Retrieving data for BTCUSD
+Adding the decorator
+Retrieving data for ZECUSD
+Cryptotable has changed: ETHUSD
+Retrieving data for 
+Retrieving data for 
+Retrieving data for 
+Retrieving data for 
+Retrieving data for 
+Retrieving data for 
+Retrieving data for 
