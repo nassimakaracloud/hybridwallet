@@ -34,6 +34,8 @@ class CurrenciesController < ApplicationController
 
     respond_to do |format|
       if @currency.save
+        my_logger = MyLogger.instance
+        my_logger.logInformation "Added currency with symbol #{@currency.symbol}"
         format.html { redirect_to @currency, notice: 'Currency was successfully created.' }
         format.json { render :show, status: :created, location: @currency }
       else
@@ -110,12 +112,16 @@ class CurrenciesController < ApplicationController
       require 'net/http'
       require 'json'
       @currencies = Currency.all
-      @url= "http://data.fixer.io/api/latest?access_key#{ENV['FIXER_KEY']}"
+      @url= "http://data.fixer.io/api/latest?access_key=#{ENV['FIXER_KEY']}"
       @uri= URI(@url)
       @response= Net::HTTP.get(@uri)
       @lookup_currency= JSON.parse(@response)
       @symbol = params[:symbol]
       puts "symbol: #{@symbol}"
+      if @symbol
+        my_logger = MyLogger.instance
+        my_logger.logInformation "Retrieving data for #{@symbol}"
+      end
     end
 
 end

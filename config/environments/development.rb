@@ -33,7 +33,7 @@ Rails.application.configure do
   config.active_storage.service = :amazon
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -63,5 +63,17 @@ Rails.application.configure do
   
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'https://hybridwallet-nassimakara100.c9users.io/users/sign_in' }
+  config.action_mailer.default_url_options = { host: 'https://hybridwallet.herokuapp.com' }
+
+  config.action_mailer.smtp_settings = {
+     :address => "smtp.gmail.com",
+     :port => 587,
+     :user_name => ENV['EMAIL'],
+     :password => ENV['PASSWORD'],
+     :authentication => :plain,
+     :enable_starttls_auto => true
+  }
+
+
+
 end

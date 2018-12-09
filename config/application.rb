@@ -16,5 +16,6 @@ module Hybridwallet
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.active_record.observers = [:cryptotable_observer]
+    config.active_record.observers = [:currency_observer]
   end
 end

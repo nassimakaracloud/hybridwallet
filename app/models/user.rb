@@ -8,7 +8,7 @@ class User < ApplicationRecord
          has_many :file_lists
          
   def timeout_in
-   15.minutes
+   10.minutes
   end   
          
 end

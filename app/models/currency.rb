@@ -1,4 +1,5 @@
 class Currency < ApplicationRecord
+  require 'my_logger'
     belongs_to :user
     
     def total_amount
