@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The project is deployed in Heroku under the link https://hybridwallet.herokuapp.com/
 
-Things you may want to cover:
+The application has been developped in Cloud 9 under the following project links :
 
-* Ruby version
+https://ide.c9.io/nassimakara100/hybridwallet
 
-* System dependencies
+https://ide.c9.io/nassimakara100/bitcoinaverage-ruby
 
-* Configuration
+The repositories are in github : 
 
-* Database creation
+https://github.com/nassimakaracloud/hybridwallet
 
-* Database initialization
+https://github.com/nassimakaracloud/bitcoinaverage-ruby
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
