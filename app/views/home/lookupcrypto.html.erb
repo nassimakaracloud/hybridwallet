@@ -14,7 +14,9 @@
             <% if @symbol['error_message'].present? %>
                Not supported
             <% else %>
-                 High: <%= @symbol['high'] %>
+                 High: <%= @symbol['high'] %><br/>
+                 Low: <%= @symbol['low'] %><br/>
+                 Average: <%= @symbol['averages'] ['day'] %>
             <% end %>
           <% else %>
             &nbsp;

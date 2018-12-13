@@ -1593,3 +1593,5 @@ Adding the decorator
 Retrieving data for ETHUSD
 Adding the decorator
 Retrieving data for ETHUSD
+Currencies Table has changed: USD
+Added currency with symbol USD
